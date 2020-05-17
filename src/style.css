@@ -1,0 +1,137 @@
+.header{
+background-color: black;
+margin:auto !important;
+border-bottom: 5px solid #33d39e ;
+}
+
+#header-trippen{
+color:#33d39e;
+text-align: center;
+margin-top: 0;
+}
+.content{
+    width: 400px;
+    margin: 0 auto 100px auto;
+    border:1px solid #ccc;
+}
+
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  background-color: black;
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: -5px 2px 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+#detailDiv{
+    position: absolute;
+width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: lightblue;
+  margin-top: 20px;
+}
+.post-header{
+    background-color: #212529;
+    height: 50px;
+    padding: 10px;
+}
+.post-user-details{
+display: flex;
+}
+.from{
+    color: white;
+}
+.to{
+    color: #33d39e;
+}
+.user-icon{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+.post-info{
+    display: flex;
+    flex-direction: row;
+}
+.post-like{
+    border-bottom: 3px solid palevioletred;
+    width: 33%;
+    text-align: center;
+}
+.post-comment{
+    border-bottom: 3px solid orangered;
+    text-align: center;
+    width: 33%;
+}
+.post-map{
+    text-align: center;
+    width: 33%;
+    border-bottom: 3px solid aquamarine;
+}
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+    color: white;
+    align-items: center;
+    border-top:3px solid #212529;
+}
+
+.nav-bar-footer{
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.nav-bar-footer li{
+    text-align: center;
+    list-style: none;
+    margin-right: 30px;
+    position: relative;
+}

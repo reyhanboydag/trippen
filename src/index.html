@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trppen</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header">
+            <h3 id="header-trippen">trippen</h3>
+        </div>
+    </header>
+
+  <main>
+      <div class="content">
+          <article>
+              <div class="post-card">
+                  <div class="post-header">
+                    <span class="from">From</span>
+                    <span>ICON</span>
+                    <span class="to">To</span>
+                  </div>
+                  <div id="detailDiv">
+
+                  </div>
+                  <div class="post-slider">
+                    <div class="slideshow-container">
+                        <div class="mySlides fade">
+                          <img src="https://www.matrixtravel.com.tr/Photos/travel-bg3.jpg" style="width:100%">
+                        </div>
+                        <div class="mySlides fade">
+                          <img src="https://www.matrixtravel.com.tr/Photos/travel-bg3.jpg" style="width:100%">
+                        </div>                        
+                        <div class="mySlides fade">
+                          <img src="https://www.matrixtravel.com.tr/Photos/travel-bg3.jpg" style="width:100%">
+                        </div>                       
+                        </div>                        
+                        <div style="text-align:center">
+                          <span class="dot" onclick="currentSlide(1)"></span> 
+                          <span class="dot" onclick="currentSlide(2)"></span> 
+                          <span class="dot" onclick="currentSlide(3)"></span> 
+                        </div>
+                  </div>
+                  <div class="post-user-details">
+                      <div class="user-icon">
+                        <img src="./usericon.png" width="25px" height="25px"/>
+                      </div>
+                      <div class="user-detail">
+                        <div class="user-name">Reyhan
+                        </div>
+                        <div class="user-description"> description
+                        </div>
+                      </div>
+                  </div>
+                  <div class="post-description" id="text">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                  </div>
+                  <div class="btn-container">
+                    <button id="toggle">Read More</button>
+                    </div>
+                  <div class="post-info">
+                      <div class="post-like" onclick="postLikes()" >
+                          <span class="like-icon"><svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
+                          </svg></span>
+                          <span class="like-count">like</span>
+                      </div>
+                      <div class="post-comment">
+                          <span class="comment-icon">
+                            <svg class="bi bi-text-left" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M2 12.5a.5.5 0 01.5-.5h7a.5.5 0 010 1h-7a.5.5 0 01-.5-.5zm0-3a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5zm0-3a.5.5 0 01.5-.5h7a.5.5 0 010 1h-7a.5.5 0 01-.5-.5zm0-3a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
+                              </svg>
+                              Comment
+                          </span>
+                          <span class="comment-count"></span>
+                      </div>
+                      <div class="post-map">
+                          <span class="map-icon">
+                            <svg class="bi bi-map" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M15.817.613A.5.5 0 0116 1v13a.5.5 0 01-.402.49l-5 1a.502.502 0 01-.196 0L5.5 14.51l-4.902.98A.5.5 0 010 15V2a.5.5 0 01.402-.49l5-1a.5.5 0 01.196 0l4.902.98 4.902-.98a.5.5 0 01.415.103zM10 2.41l-4-.8v11.98l4 .8V2.41zm1 11.98l4-.8V1.61l-4 .8v11.98zm-6-.8V1.61l-4 .8v11.98l4-.8z" clip-rule="evenodd"/>
+                            </svg>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </article>
+      </div>
+  </main>
+  <footer>
+      <div class="footer">
+        <ul class="nav-bar-footer">
+            <li>
+                <svg class="bi bi-map" width="2em" height="2em" viewBox="0 0 16 16" fill="#212529" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M15.817.613A.5.5 0 0116 1v13a.5.5 0 01-.402.49l-5 1a.502.502 0 01-.196 0L5.5 14.51l-4.902.98A.5.5 0 010 15V2a.5.5 0 01.402-.49l5-1a.5.5 0 01.196 0l4.902.98 4.902-.98a.5.5 0 01.415.103zM10 2.41l-4-.8v11.98l4 .8V2.41zm1 11.98l4-.8V1.61l-4 .8v11.98zm-6-.8V1.61l-4 .8v11.98l4-.8z" clip-rule="evenodd"/>
+                </svg>
+            </li>
+            <li>
+                <svg class="bi bi-pencil" width="2em" height="2em" viewBox="0 0 16 16" fill="#212529" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M11.293 1.293a1 1 0 011.414 0l2 2a1 1 0 010 1.414l-9 9a1 1 0 01-.39.242l-3 1a1 1 0 01-1.266-1.265l1-3a1 1 0 01.242-.391l9-9zM12 2l2 2-9 9-3 1 1-3 9-9z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd" d="M12.146 6.354l-2.5-2.5.708-.708 2.5 2.5-.707.708zM3 10v.5a.5.5 0 00.5.5H4v.5a.5.5 0 00.5.5H5v.5a.5.5 0 00.5.5H6v-1.5a.5.5 0 00-.5-.5H5v-.5a.5.5 0 00-.5-.5H3z" clip-rule="evenodd"/>
+                </svg>
+            </li>
+            <li>
+                <svg class="bi bi-person-fill" width="2em" height="2em" viewBox="0 0 16 16" fill="#212529" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                </svg>
+            </li>
+            <li>
+                <svg class="bi bi-search" width="2em" height="2em" viewBox="0 0 16 16" fill="#212529" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
+                    <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
+                </svg>
+            </li>
+        </ul>
+      </div>
+  </footer>
+
+  <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+
+//open likes
+
+function postLikes() {
+  var x = document.getElementById("detailDiv");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+$(document).ready(function() {
+  $("#toggle").click(function() {
+    var elem = $("#toggle").text();
+    if (elem == "Read More") {
+      //Stuff to do when btn is in the read more state
+      $("#toggle").text("Read Less");
+      $("#text").slideDown();
+    } else {
+      //Stuff to do when btn is in the read less state
+      $("#toggle").text("Read More");
+      $("#text").slideUp();
+    }
+  });
+});
+
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+</body>
+</html>
