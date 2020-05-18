@@ -23,18 +23,24 @@
                     <span class="to">To</span>
                   </div>
                   <div id="detailDiv">
-
+                    <div id="closeIcon" onclick="postLikes()">
+                      <svg class="bi bi-x-circle" width="20px" height="20px" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clip-rule="evenodd"/>
+                        <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z" clip-rule="evenodd"/>
+                      </svg>
+                    </div>                   
                   </div>
                   <div class="post-slider">
                     <div class="slideshow-container">
                         <div class="mySlides fade">
-                          <img src="https://www.matrixtravel.com.tr/Photos/travel-bg3.jpg" style="width:100%">
+                          <img src="./image.jpg" style="width:100%">
                         </div>
                         <div class="mySlides fade">
-                          <img src="https://www.matrixtravel.com.tr/Photos/travel-bg3.jpg" style="width:100%">
+                          <img src="./image.jpg" style="width:100%">
                         </div>                        
                         <div class="mySlides fade">
-                          <img src="https://www.matrixtravel.com.tr/Photos/travel-bg3.jpg" style="width:100%">
+                          <img src="./image.jpg" style="width:100%">
                         </div>                       
                         </div>                        
                         <div style="text-align:center">
@@ -45,7 +51,7 @@
                   </div>
                   <div class="post-user-details">
                       <div class="user-icon">
-                        <img src="./usericon.png" width="25px" height="25px"/>
+                        <img src="./image.jpg" width="35px" height="35px" style="border-radius:50%"/>
                       </div>
                       <div class="user-detail">
                         <div class="user-name">Reyhan
@@ -54,12 +60,10 @@
                         </div>
                       </div>
                   </div>
-                  <div class="post-description" id="text">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+                  <div class="post-description">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel<span id="text">...</span><span id="more">erisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</span></p>
+                    <p onclick="readMore()" id="myBtn">Read more</p>
                   </div>
-                  <div class="btn-container">
-                    <button id="toggle">Read More</button>
-                    </div>
                   <div class="post-info">
                       <div class="post-like" onclick="postLikes()" >
                           <span class="like-icon"><svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -67,7 +71,7 @@
                           </svg></span>
                           <span class="like-count">like</span>
                       </div>
-                      <div class="post-comment">
+                      <div class="post-comment" onclick="postLikes()">
                           <span class="comment-icon">
                             <svg class="bi bi-text-left" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M2 12.5a.5.5 0 01.5-.5h7a.5.5 0 010 1h-7a.5.5 0 01-.5-.5zm0-3a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5zm0-3a.5.5 0 01.5-.5h7a.5.5 0 010 1h-7a.5.5 0 01-.5-.5zm0-3a.5.5 0 01.5-.5h11a.5.5 0 010 1h-11a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
@@ -76,7 +80,7 @@
                           </span>
                           <span class="comment-count"></span>
                       </div>
-                      <div class="post-map">
+                      <div class="post-map" onclick="postLikes()">
                           <span class="map-icon">
                             <svg class="bi bi-map" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M15.817.613A.5.5 0 0116 1v13a.5.5 0 01-.402.49l-5 1a.502.502 0 01-.196 0L5.5 14.51l-4.902.98A.5.5 0 010 15V2a.5.5 0 01.402-.49l5-1a.5.5 0 01.196 0l4.902.98 4.902-.98a.5.5 0 01.415.103zM10 2.41l-4-.8v11.98l4 .8V2.41zm1 11.98l4-.8V1.61l-4 .8v11.98zm-6-.8V1.61l-4 .8v11.98l4-.8z" clip-rule="evenodd"/>
@@ -116,63 +120,9 @@
         </ul>
       </div>
   </footer>
-
+  
   <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script>
+  <script src="script.js"></script>
 
-//open likes
-
-function postLikes() {
-  var x = document.getElementById("detailDiv");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-
-$(document).ready(function() {
-  $("#toggle").click(function() {
-    var elem = $("#toggle").text();
-    if (elem == "Read More") {
-      //Stuff to do when btn is in the read more state
-      $("#toggle").text("Read Less");
-      $("#text").slideDown();
-    } else {
-      //Stuff to do when btn is in the read less state
-      $("#toggle").text("Read More");
-      $("#text").slideUp();
-    }
-  });
-});
-
-
-    var slideIndex = 1;
-    showSlides(slideIndex);
-    
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-    
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-    
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";  
-      }
-      for (i = 0; i < dots.length; i++) {
-          dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " active";
-    }
-    </script>
 </body>
 </html>

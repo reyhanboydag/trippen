@@ -20,14 +20,12 @@ body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none}
 img {vertical-align: middle;}
 
-/* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
   position: relative;
   margin: auto;
   background-color: black;
 }
-/* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
   height: 10px;
@@ -38,7 +36,6 @@ img {vertical-align: middle;}
   display: inline-block;
   transition: background-color 0.6s ease;
 }
-
 .active, .dot:hover {
   background-color: #717171;
 }
@@ -61,56 +58,83 @@ img {vertical-align: middle;}
   to {opacity: 1}
 }
 
-/* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
 }
 
 #detailDiv{
-    position: absolute;
-    width: 100%;
-    padding: 50px 0;
-    text-align: center;
-    background-color: lightblue;
-    margin-top: 20px;
+  display: none;
+  position: absolute;
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  width: 398px;
+  height: 230px;
+  z-index: 1;
+  opacity: 0.5;
+  background-color: black;
+}
+#closeIcon{
+  display: none;
+  color: white;
+  margin-top: -45px;
+  z-index: 5;
+  text-align-last: end;
+  cursor: pointer;
 }
 .post-header{
-    background-color: #212529;
-    height: 50px;
-    padding: 10px;
+  background-color: #212529;
+  height: 50px;
+  padding: 10px;
 }
 .post-user-details{
 display: flex;
 }
 .from{
-    color: white;
+  color: white;
 }
 .to{
-    color: #33d39e;
+  color: #33d39e;
 }
-.user-icon{
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
+
+.user-detail{
+  font-weight: 600;
+  font-size: 12px;
+  margin:0 0 15px 25px;
+  
 }
 .post-info{
     display: flex;
     flex-direction: row;
 }
+.post-description{
+  font-size: 15px;
+}
+#more {display: none;}
+#myBtn{
+  color: #33d39e;
+  cursor: pointer;
+}
 .post-like{
     border-bottom: 3px solid palevioletred;
     width: 33%;
     text-align: center;
+  cursor: pointer;
+
 }
 .post-comment{
     border-bottom: 3px solid orangered;
     text-align: center;
     width: 33%;
+  cursor: pointer;
+
 }
 .post-map{
     text-align: center;
-    width: 33%;
+    width: 34%;
     border-bottom: 3px solid aquamarine;
+  cursor: pointer;
+
 }
 .footer{
     position: fixed;
