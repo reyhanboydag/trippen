@@ -1,13 +1,8 @@
 # Trippen Travel
-Graphql'in temel yapı taşları olan query ve mutai
 
-MongoDB
+MongoDB: Bu projeyi çalıştırmak için MongoDB'yi kurmanız ve bir örneğin çalıştığından emin olmanız gerekir.
 
-Bu projeyi çalıştırmak için MongoDB'yi kurmanız ve bir örneğin çalıştığından emin olmanız gerekir.
-
-NPM Modülleri
-
-Package.json içinde aşağıdaki NPM modülleri gereklidir:
+NPM Modülleri: Package.json içinde aşağıdaki NPM modülleri gereklidir:
 
 express,
 express-graphql,
