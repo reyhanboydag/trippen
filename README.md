@@ -34,7 +34,9 @@ Kullanıcı şifreleri "bcryptjs" ile şifrelenmektedir.
 mutation{
  createUser(userInput:{username:"reyhan",password:"test1",description:"1travel"}){_id,password}
 }
+
 Response
+
 {
   "data": {
     "createUser": {
