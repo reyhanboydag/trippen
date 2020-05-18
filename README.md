@@ -9,16 +9,16 @@ NPM Modülleri
 
 Package.json içinde aşağıdaki NPM modülleri gereklidir:
 
-express
-express-graphql
-graphql
-mongoose
-babel-cli
-babel-preset-es2015
-nodemon
-bcryptjs
-body-parser
-bootstrap-icons
+express,
+express-graphql,
+graphql,
+mongoose,
+babel-core,
+babel-preset-env,
+nodemon,
+bcryptjs,
+body-parser,
+bootstrap-icons,
 
 Geliştirme Süreci
 
