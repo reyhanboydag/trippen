@@ -9,6 +9,8 @@ const { buildSchema } = require("graphql");
 app.use(express.static(__dirname + '/src'));
 
 const User = require('./models/user');
+const Event = require('./models/events');
+const Vehicle = require('./models/vehicle');
 app.use(bodyParser.json());
 
 app.use(
@@ -19,33 +21,53 @@ app.use(
             _id:ID!
             title:String!
             description:String!
-            price:Float!
             date: String!
+            from:String!
+            to:String!
+            vehicle:Vehicle!
+            creator:User!
         }
 
         type User {
           _id:ID!
-          email: String!
+          username: String!
+          description:String!
           password: String
+          createdEvents:[Event!]
+        }
+
+        type Vehicle{
+          _id:ID!
+          name:String!
+          vehicleNumber:Int!
         }
 
         input EventInput {
             title:String!
             description:String!
-            price:Float!
             date: String!
+            from: String!
+            to: String!
         }
 
         input UserInput{
-          email: String!
+          username: String!
           password:String!
+          description:String!
         }
+
+        input VehicleInput{
+          name:String!
+          vehicleNumber:Int!
+        }
+
         type RootQuery{
             events:[Event!]!
         }
         type RootMutation{
             createEvent(eventInput:EventInput):Event
             createUser(userInput:UserInput):User 
+            createVehicle(vehicleInput:VehicleInput):Vehicle 
         }
         schema{
             query: RootQuery
@@ -54,10 +76,18 @@ app.use(
     `),
     rootValue: {
       events: () => {
-        return Event.find().then(events=>{
+        return Event.find()
+        .populate('creator')
+        .then(events=>{
           return events.map(event=>{
-            return {...event._doc,_id:event._doc._id.toString()}
-          })
+            return {
+              ...event._doc,
+              _id:event.id,
+              creator:{
+              ...event._doc.creator._doc,
+              _id:event._doc.creator.id
+            }};
+          });
         })
         .catch(err=>{
           throw err;
@@ -67,13 +97,25 @@ app.use(
         const event = new Event({
           title: args.eventInput.title,
           description: args.eventInput.description,
-          price: +args.eventInput.price,
+          from: args.eventInput.from,
+          to: args.eventInput.to,
           date: new Date(args.eventInput.date),
+          creator:'5ec1b4f13770aa4dd0f4af3b'
         });
-        return event.save().then(result=>{
-          console.log(result);
-          return {...result._doc,_id:result._doc._id.toString()
-          };
+        let createdEvent;
+        return event.save()
+        .then(result=>{
+          createdEvent={...result._doc,_id:result._doc._id.toString()}
+          return User.findById('5ec1b4f13770aa4dd0f4af3b')
+        }).then(user=>{
+          if(!user){
+            throw new Error('User not found');
+          }
+          user.createdEvents.push(event);
+          return user.save();
+        })
+        .then(result=>{
+          return createdEvent;
         })
         .catch(err=>{
           console.log("err"+err);
@@ -81,13 +123,18 @@ app.use(
         });
       },
       createUser:args=>{
-        return bcrypt
-        .hash(args.userInput.password,12)
+       return User.findOne({username:args.userInput.username})
+        .then(user=>{
+          if(user){
+            throw new Error('User exists already.');
+          }
+          return bcrypt.hash(args.userInput.password,12)
+        })
         .then(hashedPassword=>{
           const user = new User({
-            email: args.userInput.email,
-            password: hashedPassword,
-            fullName: args.userInput.fullName
+            username: args.userInput.username,
+            description: args.userInput.description,
+            password: hashedPassword
           });
           return user.save();
         })
@@ -98,7 +145,22 @@ app.use(
           throw err;
         });
         
+      },
+      createVehicle:(args)=>{
+        const vehicle = new Vehicle({
+          name: args.vehicleInput.name,
+          vehicleNumber: args.vehicleInput.vehicleNumber,
+        });
+        return vehicle.save().then(result=>{
+          return {...result._doc,_id:result._doc._id.toString()
+          };
+        })
+        .catch(err=>{
+          console.log("err"+err);
+          throw err;
+        });
       }
+
     },
     graphiql: true,
   })
